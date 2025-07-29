@@ -1,7 +1,10 @@
 import Header from "./components/Header";
 import Banner from "./components/Banner";
+import About from "./components/About";
 
 import { useState, useEffect } from "react";
+
+import "./styles/app.sass"
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -15,10 +18,11 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <main>
         <Banner />
+        <About />
       </main>
     </div>
   );
