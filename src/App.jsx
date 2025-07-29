@@ -22,7 +22,7 @@ function App() {
       <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <main>
         <Banner />
-        <About />
+        <About isDarkMode={isDarkMode}  />
       </main>
     </div>
   );
