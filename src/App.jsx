@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Banner from "./components/Banner";
 
 import { useState, useEffect } from "react";
 
@@ -16,6 +17,9 @@ function App() {
   return (
     <div>
       <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+      <main>
+        <Banner />
+      </main>
     </div>
   );
 }
