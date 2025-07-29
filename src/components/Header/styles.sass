@@ -1,0 +1,149 @@
+@use "../../styles/mixins" as *
+  
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 1000
+  padding: 1rem 0
+  transition: all 0.3s ease
+  
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: var(--surface)
+    backdrop-filter: blur(20px)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+    opacity: 0
+    transition: opacity 0.3s ease
+    
+  &.scrolled::before
+    opacity: 1
+
+.header-content
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 2rem
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+  z-index: 2
+
+.logo
+  h1
+    font-family: 'Comfortaa', cursive
+    font-size: 1.8rem
+    font-weight: 700
+    background: linear-gradient(45deg, var(--primary), var(--secondary))
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+    margin: 0
+    
+  .subtitle
+    font-family: 'Caveat', cursive
+    font-size: 0.9rem
+    color: var(--text-muted)
+    display: block
+    margin-top: -5px
+
+.navigation
+  display: flex
+  gap: 2rem
+  
+  button
+    background: none
+    border: none
+    color: var(--text)
+    font-family: 'Quicksand', sans-serif
+    font-weight: 500
+    cursor: pointer
+    padding: 0.5rem 1rem
+    border-radius: 20px
+    transition: all 0.3s ease
+    position: relative
+    
+    &:hover
+      background: rgba(255, 255, 255, 0.1)
+      transform: translateY(-2px)
+      
+    &::after
+      content: ''
+      position: absolute
+      bottom: -5px
+      left: 50%
+      width: 0
+      height: 2px
+      background: var(--primary)
+      transition: all 0.3s ease
+      transform: translateX(-50%)
+      
+    &:hover::after
+      width: 80%
+
+.header-actions
+  display: flex
+  gap: 1rem
+  align-items: center
+
+.theme-toggle
+  background: none
+  border: 2px solid var(--primary)
+  width: 45px
+  height: 45px
+  border-radius: 50%
+  cursor: pointer
+  font-size: 1.2rem
+  transition: all 0.3s ease
+  display: flex
+  align-items: center
+  justify-content: center
+  
+  &:hover
+    background: var(--primary)
+    transform: rotate(180deg) scale(1.1)
+
+.cv-button
+  background: linear-gradient(45deg, var(--primary), var(--secondary))
+  border: none
+  color: white
+  padding: 0.8rem 1.5rem
+  border-radius: 25px
+  font-family: 'Quicksand', sans-serif
+  font-weight: 600
+  text-decoration: none
+  cursor: pointer
+  transition: all 0.3s ease
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)
+  
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15)
+
+@include mobile-968px
+  .navigation
+    gap: 1rem
+    
+    button
+      padding: 0.4rem 0.8rem
+      font-size: 0.9rem
+
+@include mobile-768px
+  .header-content
+    padding: 0 1rem
+    
+  .logo h1
+    font-size: 1.5rem
+    
+  .navigation
+    display: none
+    
+  .cv-button
+    padding: 0.6rem 1.2rem
+    font-size: 0.9rem
