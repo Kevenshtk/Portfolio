@@ -1,0 +1,33 @@
+@keyframes float
+  0%, 100%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-20px)
+
+@keyframes twinkle
+  0%, 100%
+    opacity: 0.5
+    transform: scale(1)
+  50%
+    opacity: 1
+    transform: scale(1.2)
+
+@keyframes blink
+  0%, 50%
+    opacity: 1
+  51%, 100%
+    opacity: 0
+
+@keyframes steam
+  0%
+    opacity: 0.8
+    transform: translateX(-50%) translateY(0)
+  100%
+    opacity: 0
+    transform: translateX(-50%) translateY(-20px)
+
+@keyframes glow
+  0%, 100%
+    box-shadow: 0 0 15px #FFD700
+  50%
+    box-shadow: 0 0 25px #FFD700, 0 0 35px #FFD700

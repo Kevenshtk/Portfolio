@@ -1,0 +1,124 @@
+@use "../../styles/mixins" as *
+@use "../../styles/illustration" as *
+
+.banner
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 100px 2rem 50px
+  position: relative
+  overflow: hidden
+
+  &-content
+    max-width: 1200px
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 4rem
+    align-items: center
+
+.banner-text
+  h1
+    font-family: 'Comfortaa', cursive
+    font-size: 3.5rem
+    font-weight: 700
+    line-height: 1.2
+    margin-bottom: 1rem
+    background: linear-gradient(45deg, var(--primary), var(--secondary))
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+    
+  p
+    font-size: 1.3rem
+    color: var(--text-muted)
+    margin-bottom: 2rem
+    
+.banner-subtitle
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    
+    span
+      font-family: 'Caveat', cursive
+      font-size: 1.2rem
+      color: var(--text-muted)
+      
+    .typing-animation
+      color: var(--primary)
+      position: relative
+      
+      &::after
+        content: '|'
+        animation: blink 1s infinite
+
+.banner-illustration
+  display: flex
+  justify-content: center
+  align-items: center
+
+.floating-elements
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  pointer-events: none
+
+.star
+  position: absolute
+  font-size: 1.5rem
+  color: var(--accent)
+  animation: twinkle 3s ease-in-out infinite
+  
+  &.star-1
+    top: 20%
+    left: 15%
+    animation-delay: 0s
+    
+  &.star-2
+    top: 30%
+    right: 20%
+    animation-delay: 1s
+    
+  &.star-3
+    bottom: 20%
+    left: 20%
+    animation-delay: 2s
+
+.musical-note
+  position: absolute
+  font-size: 1.2rem
+  color: var(--primary)
+  animation: float 4s ease-in-out infinite
+  
+  &.note-1
+    top: 35%
+    left: 10%
+    animation-delay: 0s
+    
+  &.note-2
+    bottom: 40%
+    right: 15%
+    animation-delay: 2s
+
+
+@include mobile-968px
+  .banner-content
+    grid-template-columns: 1fr
+    text-align: center
+    gap: 2rem
+    
+  .banner-text h1
+    font-size: 2.8rem
+
+@include mobile-768px
+  .banner
+    padding: 120px 1rem 50px
+    
+  .banner-text h1
+    font-size: 2.2rem
+    
+  .banner-text p
+    font-size: 1.1rem
