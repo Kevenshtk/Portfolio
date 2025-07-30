@@ -1,6 +1,8 @@
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 import { useState, useEffect } from "react";
 
@@ -23,6 +25,8 @@ function App() {
       <main>
         <Banner />
         <About isDarkMode={isDarkMode}  />
+        <Skills />
+        <Projects />
       </main>
     </div>
   );
