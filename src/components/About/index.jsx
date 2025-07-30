@@ -12,8 +12,8 @@ const About = ({ isDarkMode }) => {
               <img
                 src={
                   isDarkMode
-                    ? "../../../public/imgPerfilDark.png"
-                    : "../../../public/imgPerfilLight.png"
+                    ? "./imgPerfilDark.png"
+                    : "./imgPerfilLight.png"
                 }
                 alt="Keven di Camargo"
               />
