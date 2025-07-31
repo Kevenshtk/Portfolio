@@ -3,6 +3,7 @@ import Banner from "./components/Banner";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 import { useState, useEffect } from "react";
 
@@ -27,6 +28,7 @@ function App() {
         <About isDarkMode={isDarkMode}  />
         <Skills />
         <Projects />
+        <Contact />
       </main>
     </div>
   );
