@@ -5,6 +5,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import MusicPlayer from "./components/MusicPlayer";
+import BackToTop from "./components/BackToTop";
 
 import { useState, useEffect } from "react";
 
@@ -32,6 +33,7 @@ function App() {
         <Contact />
       </main>
       <MusicPlayer isDarkMode={isDarkMode} />
+      <BackToTop />
     </div>
   );
 }
