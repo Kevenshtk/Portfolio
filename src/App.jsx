@@ -4,6 +4,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import MusicPlayer from "./components/MusicPlayer";
 
 import { useState, useEffect } from "react";
 
@@ -25,11 +26,12 @@ function App() {
       <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <main>
         <Banner />
-        <About isDarkMode={isDarkMode}  />
+        <About isDarkMode={isDarkMode} />
         <Skills />
         <Projects />
         <Contact />
       </main>
+      <MusicPlayer isDarkMode={isDarkMode} />
     </div>
   );
 }
