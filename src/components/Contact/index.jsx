@@ -3,6 +3,9 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+import { IoIosRocket } from "react-icons/io";
+import { FaEnvelope, FaGlobeAmericas } from "react-icons/fa";
+
 import emailjs from "emailjs-com";
 
 import Swal from "sweetalert2";
@@ -15,7 +18,7 @@ const schema = yup.object({
     .string()
     .email("E-mail inválido")
     .required("O e-mail é obrigatório"),
-  message: yup.string().required("O nome é obrigatório"),
+  message: yup.string().required("Este campo é obrigatório"),
 });
 
 const Toast = Swal.mixin({
@@ -30,7 +33,7 @@ const Toast = Swal.mixin({
   },
 });
 
-const Contact = () => {
+const Contact = ({ isDarkMode }) => {
   const {
     control,
     handleSubmit,
@@ -86,24 +89,31 @@ const Contact = () => {
 
             <div className="contact-info">
               <div className="contact-item">
-                <span className="icon">📧</span>
+                <span className="icon">
+                  <FaEnvelope />
+                </span>
                 <span>kevendicamargo@gmail.com</span>
               </div>
               <div className="contact-item">
-                <span className="icon">🌍</span>
+                <span className="icon">
+                  <FaGlobeAmericas />
+                </span>
                 <span>Guaiçara, São Paulo</span>
               </div>
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+          <form
+            className={isDarkMode ? "contact-form" : "contact-form light-mode"}
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="form-group">
               <Controller
                 name="name"
                 control={control}
                 render={({ field }) => (
                   <>
-                    <input type="text" placeholder="Seu nome ✨" {...field} />
+                    <input type="text" placeholder="Seu nome" {...field} />
                     <span>{errors.name && errors.name.message}</span>
                   </>
                 )}
@@ -118,7 +128,7 @@ const Contact = () => {
                   <>
                     <input
                       type="email"
-                      placeholder="Seu melhor email 📬"
+                      placeholder="Seu melhor email"
                       {...field}
                     />
                     <span>{errors.email && errors.email.message}</span>
@@ -134,18 +144,18 @@ const Contact = () => {
                 render={({ field }) => (
                   <>
                     <textarea
-                    placeholder="Conte-me sobre suas ideias! 💭"
-                    rows="5"
-                    {...field}
-                  ></textarea>
-                  <span>{errors.message && errors.message.message}</span>
+                      placeholder="Conte-me sobre suas ideias!"
+                      rows="5"
+                      {...field}
+                    ></textarea>
+                    <span>{errors.message && errors.message.message}</span>
                   </>
                 )}
               />
             </div>
 
             <button type="submit" className="submit-btn">
-              {isSubmitting ? "Enviando..." : "Enviar mensagem 🚀"}
+              {isSubmitting ? "Enviando..." : "Enviar mensagem"}
             </button>
           </form>
         </div>
