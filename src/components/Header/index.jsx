@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+
+import { MdLightMode, MdNightlightRound } from "react-icons/md";
+
 import "./styles.sass";
 
 const Header = ({ toggleTheme, isDarkMode }) => {
@@ -35,7 +38,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
 
         <div className="header-actions">
           <button className="theme-toggle" onClick={toggleTheme}>
-            {isDarkMode ? "☀️" : "🌙"}
+            {isDarkMode ? <MdLightMode className="icon-mode"/> : <MdNightlightRound className="icon-mode"/>}
           </button>
           <a className="cv-button" href="/cv.pdf" download= "cv">Download CV</a>
         </div>

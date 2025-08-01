@@ -106,8 +106,10 @@
   justify-content: center
   
   &:hover
-    background: var(--primary)
     transform: rotate(180deg) scale(1.1)
+
+  .icon-mode
+      color: var(--primary)
 
 .cv-button
   background: linear-gradient(45deg, var(--primary), var(--secondary))
@@ -138,12 +140,20 @@
   .header-content
     padding: 0 1rem
     
-  .logo h1
-    font-size: 1.5rem
+  .logo 
+    h1
+      font-size: 1.2rem
+
+    .subtitle
+      //font-size: 0.8rem
     
   .navigation
     display: none
+
+  .theme-toggle
+    width: 35px
+    height: 35px
     
   .cv-button
     padding: 0.6rem 1.2rem
-    font-size: 0.9rem
+    font-size: 0.7rem
