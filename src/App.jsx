@@ -30,7 +30,7 @@ function App() {
         <About isDarkMode={isDarkMode} />
         <Skills />
         <Projects />
-        <Contact />
+        <Contact isDarkMode={isDarkMode} />
       </main>
       <MusicPlayer isDarkMode={isDarkMode} />
       <BackToTop />

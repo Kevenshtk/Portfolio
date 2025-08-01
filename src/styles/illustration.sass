@@ -166,33 +166,30 @@
     animation: glow 3s ease-in-out infinite
 
   @include mobile-968px
-    .study-scene
-      width: 400px
-      height: 200px
+    width: 400px
+    height: 200px
 
     .window
       top: 0
       right: 0
 
   @include mobile-768px
-    .study-scene
-      width: 50%
+      width: 250px
       height: 180px
 
       @media( max-width: 500px)
         width: 100%
-          
+            
+      .laptop
+        width: 150px
+        height: 90px
 
-    .laptop
-      width: 150px
-      height: 90px
-
-    .coffee-cup
-      width: 20px
-      height: 25px
-
-      &::before
+      .coffee-cup
         width: 20px
+        height: 25px
+
+        &::before
+          width: 20px
 
 .about
   &::before

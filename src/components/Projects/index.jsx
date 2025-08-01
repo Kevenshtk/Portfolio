@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import { IoIosRocket, IoMdFolder } from "react-icons/io";
+
 import './styles.sass';
 
 const Projects = () => {
@@ -105,10 +108,10 @@ const Projects = () => {
                 
                 <div className="project-links">
                   <a className="project-link live" href={selectedProject.deployUrl} target="_blank" rel="next">
-                    🚀  Deploy
+                    <IoIosRocket />  Deploy
                   </a>
                   <a className="project-link repo" href={selectedProject.repoUrl} target="_blank" rel="next">
-                    📂 repositório
+                    <IoMdFolder /> Repositório
                   </a>
                 </div>
               </div>
