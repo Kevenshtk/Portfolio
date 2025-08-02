@@ -11,9 +11,9 @@ const Projects = () => {
     {
       id: 1,
       title: 'Crônicas de Calculária',
-      preview: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=300&fit=crop',
+      preview: 'https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/inicio.png',
       description: 'Um jogo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG.',
-      techStack: ['HTML', 'Sass', 'JavaScript'],
+      techStack: ['HTML', 'Sass', 'JavaScript', 'Node'],
       deployUrl: 'https://kevenshtk.github.io/cronicas-de-calcularia/',
       repoUrl: 'https://github.com/Kevenshtk/cronicas-de-calcularia'
     },
@@ -38,10 +38,10 @@ const Projects = () => {
     {
       id: 4,
       title: 'Electrum',
-      preview: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop',
+      preview: 'https://electrum-eta.vercel.app/telaInicial.png',
       description: 'Aplicação web de um e-commerce de produtos eletrônicos.',
       techStack: ['React.js', 'Sass', 'Json-server'],
-      deployUrl: '#',
+      deployUrl: 'https://electrum-eta.vercel.app',
       repoUrl: 'https://github.com/Kevenshtk/Electrum'
     }
   ];
