@@ -34,6 +34,9 @@ function App() {
       </main>
       <MusicPlayer isDarkMode={isDarkMode} />
       <BackToTop />
+      <div className="background-elements">
+        <div className="floating-particles"></div>
+      </div>
     </div>
   );
 }
