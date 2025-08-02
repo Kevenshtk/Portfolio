@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import "./styles/app.sass"
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     document.body.className = isDarkMode ? "dark-theme" : "light-theme";
