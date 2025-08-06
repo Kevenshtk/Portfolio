@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { IoIosRocket, IoMdFolder } from "react-icons/io";
 
@@ -6,6 +6,7 @@ import './styles.sass';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const modalRef = useRef(null);
 
   const projectsData = [
     {
@@ -46,6 +47,12 @@ const Projects = () => {
     }
   ];
 
+  useEffect(() => {
+  if (selectedProject && modalRef.current) {
+    modalRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
+}, [selectedProject]);
+
   const openModal = (project) => {
     setSelectedProject(project);
   };
@@ -85,7 +92,7 @@ const Projects = () => {
 
       {selectedProject && (
         <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={closeModal}>×</button>
             
             <div className="modal-body">
