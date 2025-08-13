@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import useWindowWidth from "../../hooks/useWindowWidth.js";
 
 import { IoIosRocket, IoMdFolder } from "react-icons/io";
 
@@ -7,6 +8,7 @@ import './styles.sass';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const modalRef = useRef(null);
+  const width = useWindowWidth();
 
   const projectsData = [
     {
@@ -48,10 +50,10 @@ const Projects = () => {
   ];
 
   useEffect(() => {
-  if (selectedProject && modalRef.current) {
+  if (selectedProject && modalRef.current && width <= 768) {
     modalRef.current.scrollIntoView({ behavior: 'smooth' });
   }
-}, [selectedProject]);
+}, [selectedProject, width]);
 
   const openModal = (project) => {
     setSelectedProject(project);

@@ -29,10 +29,15 @@
       color: var(--primary)
 
 .show
-  display: block
+  opacity: 1
+  animation: musicPlayerAppear 0.5s ease-out
+  position: relative
 
 .hide
-  display: none
+  opacity: 0
+  pointer-events: none
+  animation: musicPlayerDisappear 0.3s ease-out
+  position: absolute
 
 .cassette-body
   min-width: 250px
@@ -41,7 +46,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)
   border: 2px solid #444
   padding: 1rem
-  animation: musicPlayerAppear 0.5s ease-out
 
 .cassette-top
   background: linear-gradient(145deg, #333, #222)
@@ -67,8 +71,8 @@
   position: relative
   background: radial-gradient(circle, #333 30%, #555 70%)
   
-  &.spinning
-    animation: spin 2s linear infinite
+  &.remove
+    animation: takeOutReel 2s linear infinite
 
   .reel-center
     position: absolute

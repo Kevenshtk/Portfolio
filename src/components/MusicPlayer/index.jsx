@@ -11,13 +11,15 @@ const MusicPlayer = ({ isDarkMode }) => {
   const [volume, setVolume] = useState(0.5);
   const audioRef = useRef(null);
 
-  const toggleMusicPlayer = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMusicPlayer = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    setIsPlaying(false);
-  }, [isDarkMode]);
+    if (audioRef.current && isPlaying) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+      setVolume(0.5);
+    }
+  }, [isDarkMode, isPlaying]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -30,24 +32,20 @@ const MusicPlayer = ({ isDarkMode }) => {
 
     if (!audio) return;
 
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play();
-    }
+    isPlaying ? audio.pause() : audio.play();
 
     setIsPlaying(!isPlaying);
   };
 
   return (
     <div className="music-player">
-      <div className={isOpen ? "cassette-body show" : "cassette-body hide"}>
+      <div className={`cassette-body ${isOpen ? "show" : "hide"}`}>
         <div className="cassette-top">
           <div className="cassette-window">
-            <div className={`reel left-reel ${isPlaying ? "" : "spinning"}`}>
+            <div className={`reel left-reel ${isPlaying ? "" : "remove"}`}>
               <div className="reel-center"></div>
             </div>
-            <div className={`reel right-reel ${isPlaying ? "" : "spinning"}`}>
+            <div className={`reel right-reel ${isPlaying ? "" : "remove"}`}>
               <div className="reel-center"></div>
             </div>
           </div>
@@ -67,10 +65,18 @@ const MusicPlayer = ({ isDarkMode }) => {
         <div className="cassette-controls">
           <audio
             ref={audioRef}
-            src={isDarkMode ? "./music/MemoryBank.mp3" : "./music/FrozenWaters.mp3"}
+            src={
+              isDarkMode ? "./music/MemoryBank.mp3" : "./music/FrozenWaters.mp3"
+            }
+            preload="auto"
+            loop
           />
 
-          <button className="control-btn play" onClick={togglePlay}>
+          <button
+            className="control-btn play"
+            aria-label={isPlaying ? "Pausar música" : "Tocar música"}
+            onClick={togglePlay}
+          >
             {isPlaying ? <FaPause /> : <FaPlay />}
           </button>
 
