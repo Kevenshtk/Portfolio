@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import useWindowWidth from "../../hooks/useWindowWidth.js";
 
 import { IoIosRocket, IoMdFolder } from "react-icons/io";
 
-import './styles.sass';
+import "./styles.sass";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -13,47 +13,60 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: 'Crônicas de Calculária',
-      preview: 'https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/inicio.png',
-      description: 'Um jogo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG.',
-      techStack: ['HTML', 'Sass', 'JavaScript', 'Node'],
-      deployUrl: 'https://kevenshtk.github.io/cronicas-de-calcularia/',
-      repoUrl: 'https://github.com/Kevenshtk/cronicas-de-calcularia'
+      title: "Crônicas de Calculária",
+      preview:
+        "https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/inicio.png",
+      description:
+        "Um jogo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG.",
+      techStack: ["HTML", "Sass", "JavaScript", "Node"],
+      deployUrl: "https://kevenshtk.github.io/cronicas-de-calcularia/",
+      repoUrl: "https://github.com/Kevenshtk/cronicas-de-calcularia",
     },
     {
       id: 2,
-      title: 'Restaurant',
-      preview: 'https://kevenshtk.github.io/DevMedia/Modulo%204/projetos/restaurant/public/telaRestaurant.png',
-      description: 'Página de cardápio para um restaurante',
-      techStack: ['Next.js', 'Sass'],
-      deployUrl: 'https://restaurant-black-eight.vercel.app/',
-      repoUrl: 'https://github.com/Kevenshtk/Restaurant'
+      title: "Restaurant",
+      preview:
+        "https://kevenshtk.github.io/DevMedia/Modulo%204/projetos/restaurant/public/telaRestaurant.png",
+      description: "Página de cardápio para um restaurante",
+      techStack: ["Next.js", "Sass"],
+      deployUrl: "https://restaurant-black-eight.vercel.app/",
+      repoUrl: "https://github.com/Kevenshtk/Restaurant",
     },
     {
       id: 3,
-      title: 'Pokédex',
-      preview: 'https://kevenshtk.github.io/Projetos/img/telaPokedex.png',
-      description: 'Aplicação web que permite aos usuários buscar e visualizar informações sobre diferentes Pokémons.',
-      techStack: ['React.js', 'Sass', 'PokeAPI'],
-      deployUrl: 'https://pokedex-gamma-ten-40.vercel.app/',
-      repoUrl: 'https://github.com/Kevenshtk/Pokedex'
+      title: "Pokédex",
+      preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
+      description:
+        "Aplicação web que permite aos usuários buscar e visualizar informações sobre diferentes Pokémons.",
+      techStack: ["React.js", "Sass", "PokeAPI"],
+      deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
+      repoUrl: "https://github.com/Kevenshtk/Pokedex",
     },
     {
       id: 4,
-      title: 'Electrum',
-      preview: 'https://electrum-eta.vercel.app/telaInicial.png',
-      description: 'Aplicação web de um e-commerce de produtos eletrônicos.',
-      techStack: ['React.js', 'Sass', 'Spring Boot', 'H2'],
-      deployUrl: 'https://electrum-eta.vercel.app',
-      repoUrl: 'https://github.com/Kevenshtk/Electrum'
-    }
+      title: "Electrum",
+      preview: "https://electrum-eta.vercel.app/telaInicial.png",
+      description: "Aplicação web de um e-commerce de produtos eletrônicos.",
+      techStack: ["React.js", "Sass", "Spring Boot", "H2"],
+      deployUrl: "https://electrum-eta.vercel.app",
+      repoUrl: "https://github.com/Kevenshtk/Electrum",
+    },
+    {
+      id: 5,
+      title: "Portfólio Acadêmico",
+      preview: "https://portfolio-academico-seven.vercel.app/imgTela.png",
+      description: "Portfólio de projetos acadêmicos desenvolvidos durante o curso.",
+      techStack: ["React.js", "Sass"],
+      deployUrl: "https://portfolio-academico-seven.vercel.app",
+      repoUrl: "https://github.com/Kevenshtk/Portfolio-academico",
+    },
   ];
 
   useEffect(() => {
-  if (selectedProject && modalRef.current && width <= 768) {
-    modalRef.current.scrollIntoView({ behavior: 'smooth' });
-  }
-}, [selectedProject, width]);
+    if (selectedProject && modalRef.current && width <= 768) {
+      modalRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedProject, width]);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -68,14 +81,14 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">Projetos</h2>
         <p className="section-subtitle">Um pouco do que já construi</p>
-        
+
         <div className="projects-grid">
           {projectsData.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
                 <img src={project.preview} alt={project.title} />
                 <div className="project-overlay">
-                  <button 
+                  <button
                     className="see-more-btn"
                     onClick={() => openModal(project)}
                   >
@@ -94,32 +107,53 @@ const Projects = () => {
 
       {selectedProject && (
         <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeModal}>×</button>
-            
+          <div
+            className="modal-content"
+            ref={modalRef}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="close-btn" onClick={closeModal}>
+              ×
+            </button>
+
             <div className="modal-body">
               <div className="modal-image">
-                <img src={selectedProject.preview} alt={selectedProject.title} />
+                <img
+                  src={selectedProject.preview}
+                  alt={selectedProject.title}
+                />
               </div>
-              
+
               <div className="modal-details">
                 <h3>{selectedProject.title}</h3>
                 <p>{selectedProject.description}</p>
-                
+
                 <div className="tech-stack">
                   <h4>Tecnologias:</h4>
                   <div className="tech-tags">
                     {selectedProject.techStack.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
+                      <span key={index} className="tech-tag">
+                        {tech}
+                      </span>
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="project-links">
-                  <a className="project-link live" href={selectedProject.deployUrl} target="_blank" rel="next">
-                    <IoIosRocket />  Deploy
+                  <a
+                    className="project-link live"
+                    href={selectedProject.deployUrl}
+                    target="_blank"
+                    rel="next"
+                  >
+                    <IoIosRocket /> Deploy
                   </a>
-                  <a className="project-link repo" href={selectedProject.repoUrl} target="_blank" rel="next">
+                  <a
+                    className="project-link repo"
+                    href={selectedProject.repoUrl}
+                    target="_blank"
+                    rel="next"
+                  >
                     <IoMdFolder /> Repositório
                   </a>
                 </div>
