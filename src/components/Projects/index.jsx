@@ -13,6 +13,32 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      title: "AlfaTech",
+      preview:
+        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/img/telaAlfaTech.png",
+      description:
+        "Projeto desenvolvido para apresentar e divulgar serviços de hospedagem web, destacando suas funcionalidades, benefícios e planos disponíveis.",
+      techStack: ["HTML", "Sass"],
+      deployUrl:
+        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/home.html",
+      repoUrl:
+        "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Alfa-Tech",
+    },
+    {
+      id: 2,
+      title: "Manhattan - Coffee House",
+      preview:
+        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/img/telaManhattan-CoffeeHouse.png",
+      description:
+        "Landing page desenvolvida para divulgação de uma cafeteria, destacando o ambiente e identidade visual da marca.",
+      techStack: ["HTML", "Sass"],
+      deployUrl:
+        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/index.html",
+      repoUrl:
+        "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Manhattan-Coffee-House",
+    },
+    {
+      id: 3,
       title: "Crônicas de Calculária",
       preview:
         "https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/inicio.png",
@@ -23,17 +49,7 @@ const Projects = () => {
       repoUrl: "https://github.com/Kevenshtk/cronicas-de-calcularia",
     },
     {
-      id: 2,
-      title: "Restaurant",
-      preview:
-        "https://kevenshtk.github.io/DevMedia/Modulo%204/projetos/restaurant/public/telaRestaurant.png",
-      description: "Página de cardápio para um restaurante",
-      techStack: ["Next.js", "Sass"],
-      deployUrl: "https://restaurant-black-eight.vercel.app/",
-      repoUrl: "https://github.com/Kevenshtk/Restaurant",
-    },
-    {
-      id: 3,
+      id: 4,
       title: "Pokédex",
       preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
       description:
@@ -43,19 +59,21 @@ const Projects = () => {
       repoUrl: "https://github.com/Kevenshtk/Pokedex",
     },
     {
-      id: 4,
+      id: 5,
       title: "Electrum",
       preview: "https://electrum-eta.vercel.app/telaInicial.png",
-      description: "Aplicação web de um e-commerce de produtos eletrônicos.",
+      description:
+        "Aplicação web voltada para simular uma loja virtual de eletrônicos.",
       techStack: ["React.js", "Sass", "Spring Boot", "H2"],
       deployUrl: "https://electrum-eta.vercel.app",
       repoUrl: "https://github.com/Kevenshtk/Electrum",
     },
     {
-      id: 5,
+      id: 6,
       title: "Portfólio Acadêmico",
       preview: "https://portfolio-academico-seven.vercel.app/imgTela.png",
-      description: "Portfólio de projetos acadêmicos desenvolvidos durante o curso.",
+      description:
+        "Portfólio com projetos acadêmicos desenvolvidos ao longo do curso de Análise e Desenvolvimento de Sistemas.",
       techStack: ["React.js", "Sass"],
       deployUrl: "https://portfolio-academico-seven.vercel.app",
       repoUrl: "https://github.com/Kevenshtk/Portfolio-academico",
