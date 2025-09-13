@@ -1,11 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import { ThemeContext } from "../../context/themes";
 
 import { FaPause, FaPlay, FaPlus, FaMinus } from "react-icons/fa6";
 import { FaHeadphones } from "react-icons/fa";
 
 import "./styles.sass";
 
-const MusicPlayer = ({ isDarkMode }) => {
+const MusicPlayer = () => {
+  const { isDarkMode } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);

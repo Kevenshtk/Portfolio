@@ -1,9 +1,10 @@
 import { useForm, Controller } from "react-hook-form";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/themes";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { IoIosRocket } from "react-icons/io";
 import { FaEnvelope, FaGlobeAmericas } from "react-icons/fa";
 
 import emailjs from "emailjs-com";
@@ -33,7 +34,9 @@ const Toast = Swal.mixin({
   },
 });
 
-const Contact = ({ isDarkMode }) => {
+const Contact = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const {
     control,
     handleSubmit,
