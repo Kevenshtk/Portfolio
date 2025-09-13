@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../context/themes";
+
 import "./styles.sass";
 
-const About = ({ isDarkMode }) => {
+const About = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   return (
     <section id="about" className="about">
       <div className="container">
