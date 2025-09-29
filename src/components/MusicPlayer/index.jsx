@@ -55,10 +55,10 @@ const MusicPlayer = () => {
           <div className="cassette-label">
             <div className="track-info">
               <span className="track-name">
-                {isDarkMode ? "Memory Bank" : "Frozen Waters"}
+                {isDarkMode ? "Memory Bank" : "L’Été Éternel"}
               </span>
               <span className="track-subtitle">
-                {isDarkMode ? "Synthwave Radio 🌌" : "lofi hip hop radio 📚"}
+                {isDarkMode ? "Synthwave Radio" : "Restful Holidays"}
               </span>
             </div>
           </div>
@@ -68,7 +68,7 @@ const MusicPlayer = () => {
           <audio
             ref={audioRef}
             src={
-              isDarkMode ? "./music/MemoryBank.mp3" : "./music/FrozenWaters.mp3"
+              isDarkMode ? "./music/MemoryBank.mp3" : "./music/LEteEternel.mp3"
             }
             preload="auto"
             loop
