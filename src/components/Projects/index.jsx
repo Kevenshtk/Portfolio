@@ -39,17 +39,6 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Crônicas de Calculária",
-      preview:
-        "https://kevenshtk.github.io/cronicas-de-calcularia/public/assets/img/inicio.png",
-      description:
-        "Um jogo que combina conceitos matemáticos com elementos de aventura inspirados em jogos de RPG.",
-      techStack: ["HTML", "Sass", "JavaScript", "Node"],
-      deployUrl: "https://kevenshtk.github.io/cronicas-de-calcularia/",
-      repoUrl: "https://github.com/Kevenshtk/cronicas-de-calcularia",
-    },
-    {
-      id: 4,
       title: "Pokédex",
       preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
       description:
@@ -59,7 +48,7 @@ const Projects = () => {
       repoUrl: "https://github.com/Kevenshtk/Pokedex",
     },
     {
-      id: 5,
+      id: 4,
       title: "Electrum",
       preview: "https://electrum-eta.vercel.app/telaInicial.png",
       description:
@@ -69,7 +58,7 @@ const Projects = () => {
       repoUrl: "https://github.com/Kevenshtk/Electrum",
     },
     {
-      id: 6,
+      id: 5,
       title: "Portfólio Acadêmico",
       preview: "https://portfolio-academico-seven.vercel.app/imgTela.png",
       description:
