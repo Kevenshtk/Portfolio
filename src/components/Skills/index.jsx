@@ -10,9 +10,10 @@ import {
   FaReact,
   FaGitAlt,
   FaGithub,
+  FaDocker,
 } from "react-icons/fa6";
 import { RiNextjsFill } from "react-icons/ri";
-import { SiTailwindcss, SiJquery, SiTypescript, SiMysql } from "react-icons/si";
+import { SiTailwindcss, SiJquery, SiTypescript, SiMysql, SiJest } from "react-icons/si";
 
 import "./styles.sass";
 
@@ -30,6 +31,8 @@ const skillsData = [
   { name: "Git", level: "Intermediate", icon: <FaGitAlt /> },
   { name: "Git Hub", level: "Intermediate", icon: <FaGithub /> },
   { name: "MySQL", level: "beginner", icon: <SiMysql /> },
+  { name: "Docker", level: "beginner", icon: <FaDocker /> },
+  { name: "Jest", level: "beginner", icon: <SiJest  /> },
 ];
 
 const Skills = () => {
