@@ -10,7 +10,7 @@ Este projeto foi desenvolvido com React e Sass, trazendo uma estética inspirada
 
 <img align="center" src="https://skillicons.dev/icons?i=react,sass" alt="icons"/>
 
-## Estilo e Temas
+## 🎨 Estilo e Temas
 
 O portfólio possui duas versões de tema:
 
@@ -40,4 +40,4 @@ Se quiser trocar uma ideia sobre tecnologia, projetos ou oportunidades:
 
 Email: kevendicamargo@gmail.com
 
-LinkedIn: [kevendicamargoelpidio](www.linkedin.com/in/kevendicamargoelpidio)
+LinkedIn: [kevendicamargoelpidio](http://www.linkedin.com/in/kevendicamargoelpidio)
