@@ -53,7 +53,7 @@ const Projects = () => {
       preview: "https://electrum-eta.vercel.app/telaInicial.png",
       description:
         "Aplicação web voltada para simular uma loja virtual de eletrônicos.",
-      techStack: ["React.js", "Sass", "Spring Boot", "H2"],
+      techStack: ["React.js", "Sass", "Spring Boot", "H2", "Jest"],
       deployUrl: "https://electrum-eta.vercel.app",
       repoUrl: "https://github.com/Kevenshtk/Electrum",
     },
