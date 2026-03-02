@@ -1,25 +1,24 @@
-import { useState, useEffect, useContext } from "react";
-import { ThemeContext } from "../../context/themes";
-
+import { useState, useEffect } from "react";
+import { useThemeContext } from "../../hooks/useThemeContext";
 
 import { MdLightMode, MdNightlightRound } from "react-icons/md";
 
 import "./styles.sass";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const { isDarkMode, toggleTheme } = useThemeContext();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -41,9 +40,15 @@ const Header = () => {
 
         <div className="header-actions">
           <button className="theme-toggle" onClick={toggleTheme}>
-            {isDarkMode ? <MdLightMode className="icon-mode"/> : <MdNightlightRound className="icon-mode"/>}
+            {isDarkMode ? (
+              <MdLightMode className="icon-mode" />
+            ) : (
+              <MdNightlightRound className="icon-mode" />
+            )}
           </button>
-          <a className="cv-button" href="/cv.pdf" download= "cv">Download CV</a>
+          <a className="cv-button" href="/cv.pdf" download="cv">
+            Download CV
+          </a>
         </div>
       </div>
     </header>

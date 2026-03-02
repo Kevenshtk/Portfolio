@@ -1,20 +1,19 @@
-import Header from "./components/Header";
-import Banner from "./components/Banner";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import MusicPlayer from "./components/MusicPlayer";
-import BackToTop from "./components/BackToTop";
-
 import { useState, useEffect } from "react";
+import { ThemeContext } from "./hooks/useThemeContext";
 
-import { ThemeContext } from "./context/themes";
+import Header from "./components/Header/index.tsx";
+import Banner from "./components/Banner/index.tsx";
+import About from "./components/About/index.tsx";
+import Skills from "./components/Skills/index.tsx"
+import Projects from "./components/Projects/index.tsx";
+import Contact from "./components/Contact/index.tsx";
+import MusicPlayer from "./components/MusicPlayer/index.tsx";
+import BackToTop from "./components/BackToTop/index.tsx";
 
 import "./styles/app.sass";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   useEffect(() => {
     document.body.className = isDarkMode ? "dark-theme" : "light-theme";
@@ -37,6 +36,7 @@ function App() {
         </main>
         <MusicPlayer />
         <BackToTop />
+
         <div className="background-elements">
           <div className="floating-particles"></div>
         </div>

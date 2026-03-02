@@ -1,73 +1,83 @@
 import { useState, useEffect, useRef } from "react";
-import useWindowWidth from "../../hooks/useWindowWidth.js";
+import useWindowWidth from "../../hooks/useWindowWidth.ts";
 
 import { IoIosRocket, IoMdFolder } from "react-icons/io";
 
 import "./styles.sass";
 
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const modalRef = useRef(null);
-  const width = useWindowWidth();
+type ProjectsDataType = {
+  id: number;
+  title: string;
+  preview: string;
+  description: string;
+  techStack: string[];
+  deployUrl: string;
+  repoUrl: string;
+};
 
-  const projectsData = [
-    {
-      id: 1,
-      title: "AlfaTech",
-      preview:
-        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/img/telaAlfaTech.png",
-      description:
-        "Projeto desenvolvido para apresentar e divulgar serviços de hospedagem web, destacando suas funcionalidades, benefícios e planos disponíveis.",
-      techStack: ["HTML", "Sass"],
-      deployUrl:
-        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/home.html",
-      repoUrl:
-        "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Alfa-Tech",
-    },
-    {
-      id: 2,
-      title: "Manhattan - Coffee House",
-      preview:
-        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/img/telaManhattan-CoffeeHouse.png",
-      description:
-        "Landing page desenvolvida para divulgação de uma cafeteria, destacando o ambiente e identidade visual da marca.",
-      techStack: ["HTML", "Sass"],
-      deployUrl:
-        "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/index.html",
-      repoUrl:
-        "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Manhattan-Coffee-House",
-    },
-    {
-      id: 3,
-      title: "Pokédex",
-      preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
-      description:
-        "Aplicação web que permite aos usuários buscar e visualizar informações sobre diferentes Pokémons.",
-      techStack: ["React.js", "Sass", "PokeAPI"],
-      deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
-      repoUrl: "https://github.com/Kevenshtk/Pokedex",
-    },
-    {
-      id: 4,
-      title: "Electrum",
-      preview: "https://electrum-eta.vercel.app/telaInicial.png",
-      description:
-        "Aplicação web voltada para simular uma loja virtual de eletrônicos.",
-      techStack: ["React.js", "Sass", "Spring Boot", "H2", "Jest"],
-      deployUrl: "https://electrum-eta.vercel.app",
-      repoUrl: "https://github.com/Kevenshtk/Electrum",
-    },
-    {
-      id: 5,
-      title: "Portfólio Acadêmico",
-      preview: "https://portfolio-academico-seven.vercel.app/imgTela.png",
-      description:
-        "Portfólio com projetos acadêmicos desenvolvidos ao longo do curso de Análise e Desenvolvimento de Sistemas.",
-      techStack: ["React.js", "Sass"],
-      deployUrl: "https://portfolio-academico-seven.vercel.app",
-      repoUrl: "https://github.com/Kevenshtk/Portfolio-academico",
-    },
-  ];
+const projectsData: ProjectsDataType[] = [
+  {
+    id: 1,
+    title: "AlfaTech",
+    preview:
+      "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/img/telaAlfaTech.png",
+    description:
+      "Projeto desenvolvido para apresentar e divulgar serviços de hospedagem web, destacando suas funcionalidades, benefícios e planos disponíveis.",
+    techStack: ["HTML", "Sass"],
+    deployUrl:
+      "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/home.html",
+    repoUrl:
+      "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Alfa-Tech",
+  },
+  {
+    id: 2,
+    title: "Manhattan - Coffee House",
+    preview:
+      "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/img/telaManhattan-CoffeeHouse.png",
+    description:
+      "Landing page desenvolvida para divulgação de uma cafeteria, destacando o ambiente e identidade visual da marca.",
+    techStack: ["HTML", "Sass"],
+    deployUrl:
+      "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/index.html",
+    repoUrl:
+      "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Manhattan-Coffee-House",
+  },
+  {
+    id: 3,
+    title: "Pokédex",
+    preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
+    description:
+      "Aplicação web que permite aos usuários buscar e visualizar informações sobre diferentes Pokémons.",
+    techStack: ["React.js", "Sass", "PokeAPI"],
+    deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
+    repoUrl: "https://github.com/Kevenshtk/Pokedex",
+  },
+  {
+    id: 4,
+    title: "Electrum",
+    preview: "https://electrum-eta.vercel.app/telaInicial.png",
+    description:
+      "Aplicação web voltada para simular uma loja virtual de eletrônicos.",
+    techStack: ["React.js", "Sass", "Spring Boot", "H2", "Jest"],
+    deployUrl: "https://electrum-eta.vercel.app",
+    repoUrl: "https://github.com/Kevenshtk/Electrum",
+  },
+  {
+    id: 5,
+    title: "Portfólio Acadêmico",
+    preview: "https://portfolio-academico-seven.vercel.app/imgTela.png",
+    description:
+      "Portfólio com projetos acadêmicos desenvolvidos ao longo do curso de Análise e Desenvolvimento de Sistemas.",
+    techStack: ["React.js", "Sass"],
+    deployUrl: "https://portfolio-academico-seven.vercel.app",
+    repoUrl: "https://github.com/Kevenshtk/Portfolio-academico",
+  },
+];
+
+const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<ProjectsDataType | null>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const width = useWindowWidth();
 
   useEffect(() => {
     if (selectedProject && modalRef.current && width <= 768) {
@@ -75,7 +85,7 @@ const Projects = () => {
     }
   }, [selectedProject, width]);
 
-  const openModal = (project) => {
+  const openModal = (project: ProjectsDataType) => {
     setSelectedProject(project);
   };
 

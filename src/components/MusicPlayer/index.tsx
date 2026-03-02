@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect, useContext } from "react";
-import { ThemeContext } from "../../context/themes";
+import { useState, useRef, useEffect } from "react";
+import { useThemeContext } from "../../hooks/useThemeContext";
 
 import { FaPause, FaPlay, FaPlus, FaMinus } from "react-icons/fa6";
 import { FaHeadphones } from "react-icons/fa";
@@ -7,11 +7,11 @@ import { FaHeadphones } from "react-icons/fa";
 import "./styles.sass";
 
 const MusicPlayer = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode } = useThemeContext();
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const toggleMusicPlayer = () => setIsOpen(!isOpen);
 
@@ -19,7 +19,6 @@ const MusicPlayer = () => {
     if (audioRef.current && isPlaying) {
       audioRef.current.currentTime = 0;
       audioRef.current.play();
-      setVolume(0.5);
     }
   }, [isDarkMode, isPlaying]);
 
@@ -29,12 +28,16 @@ const MusicPlayer = () => {
     }
   }, [volume]);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     const audio = audioRef.current;
 
     if (!audio) return;
 
-    isPlaying ? audio.pause() : audio.play();
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      await audio.play();
+    }
 
     setIsPlaying(!isPlaying);
   };

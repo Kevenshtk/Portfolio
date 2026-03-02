@@ -1,43 +1,73 @@
-# 🎧 Portfólio – Keven Di Camargo Elpidio
+# React + TypeScript + Vite
 
-Bem-vindo(a) ao meu portfólio!
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Este projeto foi desenvolvido com React e Sass, trazendo uma estética inspirada em lo-fi — presente tanto no tema claro quanto no tema escuro. A proposta visual busca transmitir uma atmosfera leve, focada e aconchegante, semelhante às famosas lives de lo-fi study no YouTube.
+Currently, two official plugins are available:
 
-🔗[Acesse o portfólio](https://portfolio-kevenshtks.vercel.app)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## ✨ Tecnologias Utilizadas
+## React Compiler
 
-<img align="center" src="https://skillicons.dev/icons?i=react,sass" alt="icons"/>
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🎨 Estilo e Temas
+## Expanding the ESLint configuration
 
-O portfólio possui duas versões de tema:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- 🌞 Tema Claro: inspirado em cores suaves, tons pastel e vibes relaxantes.
-- 🌙 Tema Escuro: atmosfera noturna lo-fi, com sombras leves e contraste suave.
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-Ambos os temas seguem:
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-- Estética lo-fi moderna
-- Animações sutis
-- Layout limpo e minimalista
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## 🧩 Estrutura do Projeto
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-As principais seções do portfólio incluem:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- Home
-- Sobre mim
-- Habilidades
-- Projetos
-- Contato
-- Aside com player de música (inspirado em lives lo-fi)
-
-## 📬 Contato
-
-Se quiser trocar uma ideia sobre tecnologia, projetos ou oportunidades:
-
-Email: kevendicamargo@gmail.com
-
-LinkedIn: [kevendicamargoelpidio](http://www.linkedin.com/in/kevendicamargoelpidio)
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
