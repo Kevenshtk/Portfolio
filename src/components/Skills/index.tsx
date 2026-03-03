@@ -13,7 +13,13 @@ import {
   FaDocker,
 } from "react-icons/fa6";
 import { RiNextjsFill } from "react-icons/ri";
-import { SiTailwindcss, SiJquery, SiTypescript, SiMysql, SiJest } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiJquery,
+  SiTypescript,
+  SiMysql,
+  SiJest,
+} from "react-icons/si";
 
 import "./styles.sass";
 
@@ -38,43 +44,37 @@ const skillsData: SkillsDataType[] = [
   { name: "Git Hub", level: "Intermediate", icon: <FaGithub /> },
   { name: "MySQL", level: "beginner", icon: <SiMysql /> },
   { name: "Docker", level: "beginner", icon: <FaDocker /> },
-  { name: "Jest", level: "beginner", icon: <SiJest  /> },
+  { name: "Jest", level: "beginner", icon: <SiJest /> },
 ];
 
 const Skills = () => {
   const width = useWindowWidth();
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(width > 765 && width <= 900 ? 4 : 2);
-  const [currentSkills, setCurrentSkills] = useState<SkillsDataType[]>(skillsData);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSkills, setCurrentSkills] = useState<SkillsDataType[]>([]);
 
   useEffect(() => {
-    const getStepSize = () => (width > 765 && width <= 900 ? 4 : 2);
-
-    const pagination = () => {
-      const step = getStepSize();
-
-      if (min >= skillsData.length) {
-        setMin(0);
-        setMax(step);
-        return skillsData.slice(0, step);
-      }
-
-      const nextMin = min + step;
-      const nextMax = max + step;
-
-      setMin(nextMin);
-      setMax(nextMax);
-
-      return skillsData.slice(min, max);
+    const getStepSize = () => {
+      if (width > 900) return 6;
+      if (width > 765) return 4;
+      return 2;
     };
 
-    if (width <= 900) {
-      const interval = setInterval(() => {
-        setCurrentSkills(pagination());
-      }, 2500);
-      return () => clearInterval(interval);
+    const step = getStepSize();
+
+    if (width > 900) {
+      setCurrentSkills(skillsData.slice(0, 6));
     }
-  }, [min, max, width]);
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const next = prev + step >= skillsData.length ? 0 : prev + step;
+        setCurrentSkills(skillsData.slice(next, next + step));
+        return next;
+      });
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [width]);
 
   return (
     <section id="skills" className="skills">
