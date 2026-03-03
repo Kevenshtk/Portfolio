@@ -62,7 +62,7 @@ const Skills = () => {
     const step = getStepSize();
 
     if (width > 900) {
-      setCurrentSkills(skillsData.slice(0, 6));
+      setCurrentSkills(skillsData.slice(currentIndex, 6));
     }
     
     const interval = setInterval(() => {
