@@ -48,7 +48,7 @@ const projectsData: ProjectsDataType[] = [
     preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
     description:
       "Aplicação web que permite aos usuários buscar e visualizar informações sobre diferentes Pokémons.",
-    techStack: ["React.js", "Sass", "PokeAPI"],
+    techStack: ["Next.js", "TailwindCSS", "Typescript", "PokeAPI"],
     deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
     repoUrl: "https://github.com/Kevenshtk/Pokedex",
   },
