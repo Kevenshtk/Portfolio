@@ -5,6 +5,19 @@ import "./styles.sass";
 const About = () => {
   const { isDarkMode } = useThemeContext();
 
+  const calcAge = () => {
+    const birthDate = new Date("2003-02-20");
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
   return (
     <section id="about" className="about">
       <div className="container">
@@ -27,7 +40,7 @@ const About = () => {
 
           <div className="bio-section">
             <p className="intro-text">
-              Olá! Meu nome é Keven, tenho 22 anos, atualmente estou cursando
+              Olá! Meu nome é Keven, tenho {calcAge()} anos, atualmente estou cursando
               Análise e Desenvolvimento de Sistemas na Fatec de Lins e sou
               formado como Técnico em Informática pela Etec de Lins.
             </p>
