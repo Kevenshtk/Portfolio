@@ -46,7 +46,7 @@ const Header = () => {
               <MdNightlightRound className="icon-mode" />
             )}
           </button>
-          <a className="cv-button" href="/cv.pdf" download="cv">
+          <a className="cv-button" href="/cv_keven_camargo.pdf" download="cv_keven_camargo">
             Download CV
           </a>
         </div>
