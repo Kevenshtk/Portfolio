@@ -47,7 +47,7 @@ const projectsData: ProjectsDataType[] = [
     title: "Pokédex",
     preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
     description:
-      "Landing page criada para divulgação de uma cafeteria, com ênfase na identidade visual e experiência do usuário. O projeto valoriza o design moderno e a apresentação do ambiente, transmitindo a essência da marca de forma envolvente.",
+      "Uma Pokédex interativa que permite explorar informações detalhadas sobre os Pokémon, incluindo tipos, habilidades, estatísticas, fraquezas, evoluções, espécie e descrição.",
     techStack: ["Next.js", "TailwindCSS", "Typescript", "PokeAPI"],
     deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
     repoUrl: "https://github.com/Kevenshtk/Pokedex",
