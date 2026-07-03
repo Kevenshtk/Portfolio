@@ -22,6 +22,7 @@ import {
   SiMysql,
   SiJest,
   SiN8N,
+  SiTestinglibrary,
 } from "react-icons/si";
 
 import "./styles.sass";
@@ -49,6 +50,7 @@ const skillsData: SkillsDataType[] = [
   { name: "MySQL", level: "beginner", icon: <SiMysql /> },
   { name: "Docker", level: "beginner", icon: <FaDocker /> },
   { name: "Jest", level: "beginner", icon: <SiJest /> },
+  { name: "Testing Library", level: "beginner", icon: <SiTestinglibrary /> },
   { name: "N8N", level: "Intermediate", icon: <SiN8N  /> },
   { name: "Figma", level: "beginner", icon: <FaFigma /> },
 

@@ -5,19 +5,6 @@ import "./styles.sass";
 const About = () => {
   const { isDarkMode } = useThemeContext();
 
-  const calcAge = () => {
-    const birthDate = new Date("2003-02-20");
-    const today = new Date();
-
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  };
-
   return (
     <section id="about" className="about">
       <div className="container">
@@ -28,9 +15,7 @@ const About = () => {
             <div className="profile-image">
               <img
                 src={
-                  isDarkMode
-                    ? "./imgPerfilDark.png"
-                    : "./imgPerfilLight.png"
+                  isDarkMode ? "./imgPerfilDark.png" : "./imgPerfilLight.png"
                 }
                 alt="Keven di Camargo"
               />
@@ -40,17 +25,25 @@ const About = () => {
 
           <div className="bio-section">
             <p className="intro-text">
-              Olá! Meu nome é Keven, tenho {calcAge()} anos, atualmente estou cursando
-              Análise e Desenvolvimento de Sistemas na Fatec de Lins e sou
-              formado como Técnico em Informática pela Etec de Lins.
+              Olá! Sou Keven, estudante de Análise e
+              Desenvolvimento de Sistemas na Fatec e formado como Técnico
+              em Informática pela Etec.
             </p>
 
             <p>
-              Desde que conheci o mundo da programação em 2018, venho
-              aprimorando minhas habilidades e construindo projetos que reforçam
-              meu aprendizado. Tenho experiência com JavaScript, React.js,
-              buscando sempre aplicar boas práticas de desenvolvimento, para me
-              tornar um desenvolvedor web completo.
+              Desde 2018 venho construindo minha trajetória no desenvolvimento
+              web por meio de projetos pessoais e acadêmicos, aplicando na
+              prática tecnologias como React, Next.js, TypeScript, JavaScript
+              e Tailwind CSS. Tenho experiência no desenvolvimento de
+              interfaces responsivas, componentização, consumo de APIs REST e
+              boas práticas de organização de código.
+            </p>
+
+            <p>
+              Atualmente, continuo aprimorando meus conhecimentos em Jest e
+              React Testing Library para testes de aplicações, além de Docker,
+              buscando desenvolver aplicações cada vez mais escaláveis,
+              performáticas e de fácil manutenção.
             </p>
 
             <div className="social-links">

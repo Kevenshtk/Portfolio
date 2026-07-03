@@ -18,19 +18,39 @@ type ProjectsDataType = {
 const projectsData: ProjectsDataType[] = [
   {
     id: 1,
-    title: "AlfaTech",
+    title: "Cobrança.io",
     preview:
-      "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/img/telaAlfaTech.png",
+      "https://kevenshtk.github.io/Projetos/img/telas-cobranca/dashboard.png",
     description:
-      "Aplicação web desenvolvida para apresentar serviços de hospedagem, com foco em usabilidade e conversão. O projeto destaca funcionalidades, benefícios e planos de forma clara e organizada, proporcionando uma navegação intuitiva e orientada ao usuário.",
-    techStack: ["HTML", "Sass"],
+      "Aplicação web desenvolvida para auxiliar no gerenciamento de cobranças de clientes, centralizando o cadastro de serviços, acompanhamento de pagamentos e automação do envio de mensagens.",
+    techStack: ["Next.js", "CSS", "Typescript", "Jest", "Testing Library", "N8N"],
     deployUrl:
-      "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Alfa-Tech/home.html",
+      "#",
     repoUrl:
-      "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Alfa-Tech",
+      "https://github.com/Kevenshtk/Cobranca",
   },
   {
     id: 2,
+    title: "Pokédex",
+    preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
+    description:
+      "Uma Pokédex interativa que permite explorar informações detalhadas sobre os Pokémon, incluindo tipos, habilidades, estatísticas, fraquezas, evoluções, espécie e descrição.",
+    techStack: ["Next.js", "TailwindCSS", "Typescript", "PokeAPI"],
+    deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
+    repoUrl: "https://github.com/Kevenshtk/Pokedex",
+  },
+  {
+    id: 3,
+    title: "Electrum",
+    preview: "https://electrum-eta.vercel.app/telaInicial.png",
+    description:
+      "Aplicação de e-commerce desenvolvida para simular uma loja virtual de eletrônicos. Inclui funcionalidades como listagem de produtos, navegação entre páginas e interação do usuário, com foco em componentização e boas práticas de desenvolvimento front-end.",
+    techStack: ["React.js", "Sass", "Spring Boot", "H2", "Jest"],
+    deployUrl: "https://electrum-eta.vercel.app",
+    repoUrl: "https://github.com/Kevenshtk/Electrum",
+  },
+  {
+    id: 4,
     title: "Manhattan - Coffee House",
     preview:
       "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/img/telaManhattan-CoffeeHouse.png",
@@ -41,26 +61,6 @@ const projectsData: ProjectsDataType[] = [
       "https://kevenshtk.github.io/DevMedia/Modulo%201/projetos/Manhattan-Coffee-House/index.html",
     repoUrl:
       "https://github.com/Kevenshtk/DevMedia/tree/main/Modulo%201/projetos/Manhattan-Coffee-House",
-  },
-  {
-    id: 3,
-    title: "Pokédex",
-    preview: "https://kevenshtk.github.io/Projetos/img/telaPokedex.png",
-    description:
-      "Uma Pokédex interativa que permite explorar informações detalhadas sobre os Pokémon, incluindo tipos, habilidades, estatísticas, fraquezas, evoluções, espécie e descrição.",
-    techStack: ["Next.js", "TailwindCSS", "Typescript", "PokeAPI"],
-    deployUrl: "https://pokedex-gamma-ten-40.vercel.app/",
-    repoUrl: "https://github.com/Kevenshtk/Pokedex",
-  },
-  {
-    id: 4,
-    title: "Electrum",
-    preview: "https://electrum-eta.vercel.app/telaInicial.png",
-    description:
-      "Aplicação de e-commerce desenvolvida para simular uma loja virtual de eletrônicos. Inclui funcionalidades como listagem de produtos, navegação entre páginas e interação do usuário, com foco em componentização e boas práticas de desenvolvimento front-end.",
-    techStack: ["React.js", "Sass", "Spring Boot", "H2", "Jest"],
-    deployUrl: "https://electrum-eta.vercel.app",
-    repoUrl: "https://github.com/Kevenshtk/Electrum",
   },
   {
     id: 5,
@@ -177,7 +177,10 @@ const Projects = () => {
                       target="_blank"
                       rel="next"
                     >
-                      <IoIosRocket /> {selectedProject.techStack[0] === "Figma" ? "Protótipo" : "Deploy"}
+                      <IoIosRocket />{" "}
+                      {selectedProject.techStack[0] === "Figma"
+                        ? "Protótipo"
+                        : "Deploy"}
                     </a>
                   )}
 
