@@ -42,7 +42,7 @@ const projectsData: ProjectsDataType[] = [
   {
     id: 3,
     title: "Electrum",
-    preview: "https://electrum-eta.vercel.app/telaInicial.png",
+    preview: "https://kevenshtk.github.io/Projetos/img/telas-electrum/telaInicial.png",
     description:
       "Aplicação de e-commerce desenvolvida para simular uma loja virtual de eletrônicos. Inclui funcionalidades como listagem de produtos, navegação entre páginas e interação do usuário, com foco em componentização e boas práticas de desenvolvimento front-end.",
     techStack: ["React.js", "Sass", "Spring Boot", "H2", "Jest"],
